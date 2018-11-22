@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/javascript/script.js">
+  <script src="assets/javascript/script.js" type="application/javascript"></script>
   <title>Number Guesser</title>
 </head>
 <body>
@@ -12,6 +12,12 @@
     <h1>Number <span>Guesser</span></h1>
   </header>
 
-  
+  <section class="guess">
+    <input type="number" name="guess" min="1" max="100" placeholder="Enter your guess"><br>
+    <div class="buttons">
+      <input type="submit" value="Guess">
+      <input type="reset" value="Clear">
+    </div>
+  </section>
 </body>
 </html>
