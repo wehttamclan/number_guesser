@@ -21,27 +21,28 @@ function randomNumberGenerator(min, max) {
 function checkGuess() {
   let guess = guessInput.value;
   if(isNaN(parseInt(guess)) || guess == '') {
-    displayGuess.innerText = `-`;
-    displayHint.innerText = 'Please enter a valid number';
-    feedback.style.display = "block";
+    giveFeedback('-', 'Please enter a valid number');
   } else if (guess > max || guess < min) {
-    displayGuess.innerText = `out of range.`;
-    displayHint.innerText = '';
-    feedback.style.display = "block";
+    giveFeedback('out of range.', '');
   } else if(guess > randomNumber) {
-    displayGuess.innerText = `${guess}`;
-    displayHint.innerText = 'That is too high';
-    feedback.style.display = "block";
+    giveFeedback(`${guess}`, 'That is too high');
   } else if(guess < randomNumber) {
-    displayGuess.innerText = `${guess}`;
-    displayHint.innerText = 'That is too low';
-    feedback.style.display = "block";
+    giveFeedback(`${guess}`, 'That is too low')
   } else if(guess == randomNumber) {
-    displayGuess.innerText = `${guess}`;
-    displayHint.innerText = 'BOOM';
-    feedback.style.display = "block";
+    giveFeedback(`${guess}`, 'BOOM');
+    min -= 10;
+    max += 10;
+    guessInput.min = min;
+    guessInput.max = max;
+    randomNumber = randomNumberGenerator(min, max);
   }
   enableReset();
+};
+
+function giveFeedback(guessText, hintText) {
+  displayGuess.innerText = `${guessText}`;
+  displayHint.innerText = `${hintText}`;
+  feedback.style.display = "block";
 };
 
 function enableReset() {
@@ -91,6 +92,8 @@ function setRange() {
   if (maxRange.value) {
     max = parseInt(maxRange.value);    
   };
+  guessInput.min = min;
+  guessInput.max = max;
   clearGuess();
   clearFeedback();
   randomNumber = randomNumberGenerator(min, max);
