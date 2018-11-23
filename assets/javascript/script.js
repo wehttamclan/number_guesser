@@ -7,6 +7,7 @@ var displayGuess = document.getElementById("display-guess");
 var displayHint = document.getElementById("hint");
 var feedback = document.getElementById("feedback");
 var resetButton = document.getElementById("reset-button");
+var clearButton = document.getElementById("clear-guess");
 
 document.onload = randomNumberGenerator();
 
@@ -36,9 +37,12 @@ function checkGuess() {
 
 function resetGame() {
   randomNumber = randomNumberGenerator(min, max);
-  guessInput.value = '';
+  clearGuess();
   feedback.style.display = "none";
 }
 
+function clearGuess() {
+  guessInput.value = '';
+}
 submitGuess.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', resetGame)
