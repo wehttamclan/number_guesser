@@ -42,6 +42,15 @@ header span {
   font-weight: 300;
 }
 
+.range {
+  margin: 20px auto 20px;
+}
+
+.range input {
+  width: 115px;
+  font-size: 16px;
+}
+
 #reset-button {
   width: 220px;
   height: 30px;
@@ -59,6 +68,29 @@ header span {
 }
 
 #reset-button:disabled {
+  background-color: #D0D2D3;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+#set-range {
+  width: 220px;
+  height: 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: #929497;
+  color: #ffffff;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+#set-range:hover {
+  background-color: #eb008b;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+#set-range:disabled {
   background-color: #D0D2D3;
   color: #ffffff;
   font-weight: 300;
