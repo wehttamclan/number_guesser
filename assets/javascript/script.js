@@ -37,13 +37,19 @@ function checkGuess() {
     displayHint.innerText = 'BOOM';
     feedback.style.display = "block";
   }
+  enableReset();
 };
+
+function enableReset() {
+  resetButton.disabled = false;
+}
 
 function resetGame() {
   randomNumber = randomNumberGenerator(min, max);
   clearGuess();
   displayGuess.innerText = `-`;
   feedback.style.display = "none";
+  resetButton.disabled = true;
 }
 
 function clearGuess() {
