@@ -8,6 +8,9 @@ var feedback = document.getElementById("feedback");
 var guessButton = document.getElementById("submit-guess");
 var resetButton = document.getElementById("reset-button");
 var clearButton = document.getElementById("clear-guess");
+var rangeButton = document.getElementById("set-range");
+var minRange = document.getElementById("min");
+var maxRange = document.getElementById("max");
 
 document.onload = randomNumberGenerator();
 
@@ -54,11 +57,11 @@ function resetGame() {
 
 function clearGuess() {
   guessInput.value = '';
-  enableButtons();
+  enableGuessButtons();
 }
 
-function enableButtons() {
-  if(isNaN(parseInt(guessInput.value))) {
+function enableGuessButtons() {
+  if (isNaN(parseInt(guessInput.value))) {
     guessButton.disabled = true;
     clearButton.disabled = true;
   } else {
@@ -67,6 +70,22 @@ function enableButtons() {
   };
 };
 
+function setRange() {
+  min = minRange.value;
+  max = maxRange.value;
+}
+
+function enableRangeButton() {
+  if (Number.isInteger(parseInt(minRange.value))) {
+    rangeButton.disabled = false;
+  } else if (Number.isInteger(parseInt(maxRange.value))){
+    rangeButton.disabled = false;
+  } else rangeButton.disabled = true;
+}
+
 guessButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', resetGame)
-guessInput.addEventListener('input', enableButtons)
+guessInput.addEventListener('input', enableGuessButtons)
+rangeButton.addEventListener('click', setRange)
+minRange.addEventListener('input', enableRangeButton)
+maxRange.addEventListener('input', enableRangeButton)
