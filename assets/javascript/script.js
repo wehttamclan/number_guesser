@@ -18,8 +18,12 @@ function randomNumberGenerator(min, max) {
 function checkGuess() {
   let guess = guessInput.value;
   if(isNaN(guess) || guess == '') {
+    displayGuess.innerText = `-`;
     displayHint.innerText = 'Please enter a valid number';
     feedback.style.display = "block";
+  } else if (guess > max || guess < min) {
+    displayGuess.innerText = `out of range.`;
+    displayHint.innerText = '';
   } else if(guess > randomNumber) {
     displayGuess.innerText = `${guess}`;
     displayHint.innerText = 'That is too high';
@@ -38,6 +42,7 @@ function checkGuess() {
 function resetGame() {
   randomNumber = randomNumberGenerator(min, max);
   clearGuess();
+  displayGuess.innerText = `-`;
   feedback.style.display = "none";
 }
 
