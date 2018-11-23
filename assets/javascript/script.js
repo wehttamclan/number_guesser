@@ -49,7 +49,10 @@ function enableReset() {
 
 function resetGame() {
   randomNumber = randomNumberGenerator(min, max);
+  min = 1;
+  max = 100;
   clearGuess();
+  clearRanges();
   displayGuess.innerText = `-`;
   feedback.style.display = "none";
   resetButton.disabled = true;
@@ -58,6 +61,12 @@ function resetGame() {
 function clearGuess() {
   guessInput.value = '';
   enableGuessButtons();
+}
+
+function clearRanges() {
+  minRange.value = '';
+  maxRange.value = '';
+  enableRangeButton();
 }
 
 function enableGuessButtons() {
