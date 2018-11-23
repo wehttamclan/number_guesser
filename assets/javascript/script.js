@@ -71,8 +71,13 @@ function enableGuessButtons() {
 };
 
 function setRange() {
-  min = minRange.value;
-  max = maxRange.value;
+  if (minRange.value) {
+    min = parseInt(minRange.value);
+  };
+  if (maxRange.value) {
+    max = parseInt(maxRange.value);    
+  };
+  randomNumber = randomNumberGenerator(min, max);
 }
 
 function enableRangeButton() {
