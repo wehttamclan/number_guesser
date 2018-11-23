@@ -13,8 +13,8 @@
 
   <section class="guess">
     <section class="range">
-      <input type="number" id="min" min="1" max="100" placeholder="Minimum">
-      <input type="number" id="max" min="1" max="100" placeholder="Maximum"><br>
+      <input type="number" id="min" min="1" max="100" placeholder="1">
+      <input type="number" id="max" min="1" max="100" placeholder="100"><br>
       <button name="reset" id="set-range" disabled>Set Range</button>
     </section>
     <input type="number" id="guess-input" min="1" max="100" placeholder="Enter your guess"><br>
@@ -23,14 +23,12 @@
       <input onclick="clearGuess()" type="reset" value="Clear" id="clear-guess" disabled>
     </div>
     <section id="feedback">
-      <p>Your guess was</p>
+      <p>Your last guess was</p>
       <p id="display-guess"></p>
       <p id="hint"></p>
     </section>
     <button name="reset" id="reset-button" disabled>Reset</button>
   </section>
-
-
 
   <script src="assets/javascript/script.js" type="application/javascript"></script>
 </body>

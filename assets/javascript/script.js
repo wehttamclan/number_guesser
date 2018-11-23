@@ -27,6 +27,7 @@ function checkGuess() {
   } else if (guess > max || guess < min) {
     displayGuess.innerText = `out of range.`;
     displayHint.innerText = '';
+    feedback.style.display = "block";
   } else if(guess > randomNumber) {
     displayGuess.innerText = `${guess}`;
     displayHint.innerText = 'That is too high';
@@ -53,6 +54,10 @@ function resetGame() {
   max = 100;
   clearGuess();
   clearRanges();
+  clearFeedback();
+}
+
+function clearFeedback() {
   displayGuess.innerText = `-`;
   feedback.style.display = "none";
   resetButton.disabled = true;
@@ -86,6 +91,8 @@ function setRange() {
   if (maxRange.value) {
     max = parseInt(maxRange.value);    
   };
+  clearGuess();
+  clearFeedback();
   randomNumber = randomNumberGenerator(min, max);
 }
 
