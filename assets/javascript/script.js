@@ -15,21 +15,17 @@ function randomNumberGenerator(min, max) {
 
 function checkGuess() {
   let guess = guessInput.value;
-  let guessText = document.createTextNode(guessInput.value);
+  // let guessText = document.createTextNode(guessInput.value);
   if(isNaN(guess) || guess == '') {
-    let errorText = document.createTextNode("Please enter a valid number");
-    displayHint.innerHTML = '';
-    displayHint.appendChild(errorText);
+    displayHint.innerText = 'Please enter a valid number';
     feedback.style.display = "block";
   } else if(guess > randomNumber) {
-    displayGuess.appendChild(guessText);
-    let hintText = document.createTextNode("That is too high");
-    displayHint.appendChild(hintText);
+    displayGuess.innerText = `${guess}`;
+    displayHint.innerText = 'That is too high';
     feedback.style.display = "block";
   } else if(guess < randomNumber) {
-    displayGuess.appendChild(guessText);
-    let hintText = document.createTextNode("That is too low");
-    displayHint.appendChild(hintText);
+    displayGuess.innerText = `${guess}`;
+    displayHint.innerText = 'That is too low';
     feedback.style.display = "block";
   } else console.log(`"Try again ${randomNumber}"`)
 };
