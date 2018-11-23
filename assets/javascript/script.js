@@ -15,7 +15,6 @@ function randomNumberGenerator(min, max) {
 
 function checkGuess() {
   let guess = guessInput.value;
-  // let guessText = document.createTextNode(guessInput.value);
   if(isNaN(guess) || guess == '') {
     displayHint.innerText = 'Please enter a valid number';
     feedback.style.display = "block";
@@ -27,7 +26,11 @@ function checkGuess() {
     displayGuess.innerText = `${guess}`;
     displayHint.innerText = 'That is too low';
     feedback.style.display = "block";
-  } else console.log(`"Try again ${randomNumber}"`)
+  } else if(guess == randomNumber) {
+    displayGuess.innerText = `${guess}`;
+    displayHint.innerText = 'BOOM';
+    feedback.style.display = "block";
+  }
 };
 
 submitGuess.addEventListener('click', checkGuess);
