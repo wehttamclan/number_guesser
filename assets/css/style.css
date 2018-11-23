@@ -37,23 +37,55 @@ header span {
   width: 110px;
   border-radius: 50px;
   font-size: 16px;
+  background-color: #929497;
+  color: #ffffff;
+  font-weight: 300;
 }
 
 #reset-button {
   width: 220px;
-  height: 21px;
+  height: 30px;
   border-radius: 50px;
   font-size: 16px;
+  background-color: #929497;
+  color: #ffffff;
+  font-weight: 300;
 }
 
-button:disabled {
-  background-color: #D0D2D3;
+#reset-button:hover {
+  background-color: #eb008b;
   color: #ffffff;
+  font-weight: 300;
 }
 
-input:disabled {
+#reset-button:disabled {
   background-color: #D0D2D3;
   color: #ffffff;
+  font-weight: 300;
+}
+
+#submit-guess:hover {
+  background-color: #eb008b;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+#submit-guess:disabled {
+  background-color: #D0D2D3;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+#clear-guess:hover {
+  background-color: #eb008b;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+#clear-guess:disabled {
+  background-color: #D0D2D3;
+  color: #ffffff;
+  font-weight: 300;
 }
 
 #feedback {
