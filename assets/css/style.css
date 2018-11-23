@@ -27,12 +27,31 @@ header span {
   font-size: 16px;
 }
 
-.guess .buttons {
+.guess .guess-buttons {
   width: 240px;
   font-size: 16px;
   margin: 20px auto 20px;
 }
 
-.buttons input {
+.guess-buttons input {
   width: 110px;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+#reset-button {
+  width: 220px;
+  height: 21px;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #D0D2D3;
+  color: #ffffff;
+}
+
+input:disabled {
+  background-color: #D0D2D3;
+  color: #ffffff;
 }
