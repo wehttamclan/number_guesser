@@ -55,3 +55,7 @@ input:disabled {
   background-color: #D0D2D3;
   color: #ffffff;
 }
+
+#feedback {
+  display: none;
+}
