@@ -3,9 +3,10 @@ var max = 100;
 var randomNumber = randomNumberGenerator(min, max);
 var guessInput = document.getElementById("guess-input");
 var submitGuess = document.getElementById("submit-guess");
-var displayGuess = document.getElementById("display-guess")
-var displayHint = document.getElementById("hint")
-var feedback = document.getElementById("feedback")
+var displayGuess = document.getElementById("display-guess");
+var displayHint = document.getElementById("hint");
+var feedback = document.getElementById("feedback");
+var resetButton = document.getElementById("reset-button");
 
 document.onload = randomNumberGenerator();
 
@@ -33,4 +34,11 @@ function checkGuess() {
   }
 };
 
+function resetGame() {
+  randomNumber = randomNumberGenerator(min, max);
+  guessInput.value = '';
+  feedback.style.display = "none";
+}
+
 submitGuess.addEventListener('click', checkGuess);
+resetButton.addEventListener('click', resetGame)
